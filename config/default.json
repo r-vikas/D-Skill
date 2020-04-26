@@ -1,3 +1,4 @@
 {
-    "mongodb": "mongodb+srv://dellskill:dellskill@dellskill-5qaew.mongodb.net/test?retryWrites=true&w=majority"
+  "mongodb": "mongodb+srv://dellskill:dellskill@dellskill-5qaew.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtsecret": "batman"
 }
