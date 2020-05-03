@@ -1,4 +1,4 @@
 {
   "mongodb": "mongodb+srv://dellskill:dellskill@dellskill-5qaew.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtsecret": "batman"
+  "jwtsecret": "batman",
 }
