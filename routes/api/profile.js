@@ -4,6 +4,7 @@ const auth = require("../../middleware/authorization");
 const Profile = require("../../Models/Profile");
 const User = require("../../Models/User");
 const { check, validationResult } = require("express-validator");
+const axios = require("axios");
 
 //get profile details
 router.get("/myprofile", auth, async (req, res) => {
@@ -145,6 +146,24 @@ router.delete("/", auth, async (req, res) => {
   } catch (error) {
     console.log(error.message);
     res.status(500).message("error");
+  }
+});
+
+//get github repo details
+
+router.get("/github/:githubusername", async (req, res) => {
+  try {
+    const uri = encodeURI(
+      `https://api.github.com/users/${req.params.githubusername}/repos?per_page=3`
+    );
+
+    const header = {};
+
+    const githubData = await axios.get(uri, { header });
+    return res.json(githubData.data);
+  } catch (error) {
+    console.error(error.message);
+    return res.status(404).json({ message: "Github profile not found" });
   }
 });
 
