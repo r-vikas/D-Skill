@@ -5,6 +5,7 @@ const Profile = require("../../Models/Profile");
 const User = require("../../Models/User");
 const { check, validationResult } = require("express-validator");
 const axios = require("axios");
+const Post = require("../../Models/Post");
 
 //get profile details
 router.get("/myprofile", auth, async (req, res) => {

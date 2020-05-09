@@ -1,4 +1,5 @@
 const express = require("express");
+const port = 5000;
 const connectionToDb = require("./config/db");
 const userRouter = require("./routes/api/users");
 const profileRouter = require("./routes/api/profile");
@@ -28,6 +29,6 @@ app.use("/api/v1/profile", profileRouter);
 //prints all available routes :) uncomment require
 //console.log(listEndpoints(app));
 
-app.listen(5000, () => {
-  console.log("hello world");
-});
+app.listen(process.env.PORT || port, () =>
+  console.log(`listening on port ${port}`)
+);
