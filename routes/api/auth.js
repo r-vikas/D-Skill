@@ -20,7 +20,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-//route to login using id-pasword
+//route to login using id-password
 router.post(
   "/",
   [
@@ -34,7 +34,7 @@ router.post(
     }
     const { email, password } = req.body;
 
-    // 1)check if emailid exists -> send exists
+    // 1)check if email-id exists -> send exists
     try {
       let user = await User.findOne({
         email,

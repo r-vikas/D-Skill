@@ -12,7 +12,7 @@ connectionToDb();
 
 app.use(
   express.json({
-    extended: false,
+    extended: false
   })
 );
 

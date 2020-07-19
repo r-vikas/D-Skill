@@ -8,7 +8,6 @@ const PostSchema = new mongoose.Schema({
   message: {
     type: String,
     required: true,
-    unique: true,
   },
   userName: {
     type: String,
@@ -16,11 +15,10 @@ const PostSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
-  clap: [
+  claps: [
     {
       user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users",
       },
     },
   ],
@@ -28,7 +26,6 @@ const PostSchema = new mongoose.Schema({
     {
       user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users",
       },
       commentMessage: {
         type: String,
